@@ -1,0 +1,3 @@
+venv/
+.idea/
+**/CleanData_PM10.csv
