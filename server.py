@@ -39,7 +39,6 @@ def get_data(s):
         model = load('model.joblib')
         yp = model.predict([[r[-1][1],r[-2][1],r[-3][1],0]])
         r.append([len(db[s]),yp[0]])
-
         return json.dumps(r),200
     else:
         return 'sensor not found',404
