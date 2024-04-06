@@ -82,7 +82,7 @@
 		 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!--devo importare questo url per poter utilizzare i grafici-->
 			<script type="text/javascript">
 
-				$.get("http://34.154.157.58/sensors/s1",function(datav, status){
+				$.get("http://34.154.157.58/sensors/s1",function(datav, status){ <!--in teoria non ci andrebbe l'indirizzo IP, ma al suo posto ci andrebbe la dicitura 'localhost' (l'indirizzo quindi sarebbe "http://localhost/sensors/s1"). Il problema è che se si mette localhost al posto dell'indirizzo IP non parte il grafico nella pagina HTML. Quindi abbiamo optato per questa soluzione che però è assai bruttina, non è il massimo come soluzione (è temporanea)-->
 					//console.log(datav)
 					datav = JSON.parse(datav) <!--vado a creare una lista di liste-->
 					console.log(datav)
