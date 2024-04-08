@@ -36,9 +36,9 @@ def get_data(s):
         for i in range(len(db[s])):
             r.append([i,db[s][i][1]]) #vado a prendere il valore da un dizionario che è una lista di liste
 
-        model = load('model.joblib')
-        yp = model.predict([[r[-1][1],r[-2][1],r[-3][1],0]])
-        r.append([len(db[s]),yp[0]])
+        model = load('model.joblib') #vado ad aggiungere una predizione (vado a predere queste due righe di codice dal file jupyter)
+        yp = model.predict([[r[-1][1],r[-2][1],r[-3][1],0]]) #in teoria avrei dovuto usare la stessa riga di codice che c'è nel jupyter, quindi con i vati PM10-3, PM10-2 ecc, però il prof per evitare di importare pandas e creare un dataframe solo per una predizione lo ha scritto in questo modo in modo grezzo (inoltre non ha neanche considerato se il giorno da predirre sia un giorno di weekend (non aveva tempo)
+        r.append([len(db[s]),yp[0]]) #appendiamo all'ultimo risultato la predizione
 
         return json.dumps(r),200
     else:
